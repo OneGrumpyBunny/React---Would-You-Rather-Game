@@ -1,33 +1,33 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { FaPlus } from 'react-icons/fa/index'
 
 export default function Nav () {
   return (
     <nav className='nav'>
       <ul>
         <li>
-          <NavLink to='/' exact activeClassName='active'>
+          <NavLink to='/' exact activeClassName='navActive'>
             Open Polls
           </NavLink>
         </li>
         <li>
-          <NavLink to='/responses' activeClassName='active'>
+          <NavLink to='/responses' activeClassName='navActive'>
             My Responses
           </NavLink>
         </li>
         
         <li>
-          <NavLink to='/leaderboard' activeClassName='active'>
+          <NavLink to='/leaderboard' activeClassName='navActive'>
             Leaderboard
           </NavLink>
         </li>
-
-        <li className="newFormIcon">
-          <NavLink to='/newPoll' activeClassName='active'>
-            <FaPlus/>
+{/*
+        <li>
+          <NavLink to='/newPoll' activeClassName='navActive'>
+            Add a Poll
           </NavLink>
         </li>
+*/}
       </ul>
     </nav>
   )
