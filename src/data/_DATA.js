@@ -16,8 +16,7 @@ let users = {
     name: 'Tyler McGinnis',
     avatarURL: 'https://tylermcginnis.com/would-you-rather/tyler.jpg',
     answers: {
-      "vthrdm985a262al8qx3do": 'optionOne',
-      "xj352vofupe1dqz9emx13r": 'optionTwo',
+      "8xf0y6ziyjabvozdd253nd": 'optionOne',
     },
     questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
   },
