@@ -11,22 +11,19 @@ class Poll extends Component {
   render() {
     const { location, poll } = this.props      
     const { hasVoted1, hasVoted2, id } = poll
-    //const { id } = this.props
-
+    
     if (poll === null) {
       return <p>No polls returned</p>
     }
     
     return (
-       <Fragment>
-              
+       <Fragment>              
               {location.pathname === '/' 
               ? (hasVoted1 === false && hasVoted2 === false) && (
                 <Unanswered id={id}/>)
               : (hasVoted1 === true || hasVoted2 === true) && (
                 <Answered id={id}/>)
-              }  
-              
+              }                
         </Fragment>
     )
   }
