@@ -1,24 +1,26 @@
-/* Dashboard tab - Open Polls */
 
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Poll from './Poll'
 
 class OpenPolls extends Component {
   
   render() {
+    
     const { pollIds } = this.props
 
     return (
-      <div className="pollsList">
-          <h3><em>Would you rather...</em></h3>
-          {pollIds.map((id) => (              
-            <div key={id}>
-              <Poll id={id}/>
-            </div>
-          ))}
-      </div>
+      <Router>
+        <div className="pollsList">          
+            <h3><em>Would you rather...</em></h3>
+            {pollIds.map((id) => (              
+              <div key={id}>
+                <Poll id={id}/>
+              </div>
+            ))}
+        </div>
+      </Router>
     )
   }
 }

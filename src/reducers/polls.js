@@ -1,4 +1,4 @@
-import { RECEIVE_POLLS, ADD_POLL } from '../actions/polls'
+import { RECEIVE_POLLS, ADD_POLL, SAVE_ANSWER } from '../actions/polls'
 
 export default function polls (state = {}, action) {
   switch(action.type) {
@@ -7,24 +7,33 @@ export default function polls (state = {}, action) {
         ...state,
         ...action.polls
       }
-      /*case ADD_POLL :
-        const { poll } = action
+      case SAVE_ANSWER :
+        const { authedUser, qid, answer } = action;
 
-        let replyingTo = {}
-        if (poll.replyingTo !== null) {
-          replyingTo = {
-            [poll.replyingTo]: {
-              ...state[poll.replyingTo],
-              replies: state[poll.replyingTo].replies.concat([poll.id])
-            }
+        return {          
+          ...state,
+        [qid]: {
+          ...state[qid],
+          [answer]: {
+            ...state[qid][answer],
+            votes: [
+              ...state[qid][answer].votes,
+              authedUser
+            ]
           }
         }
+      }
+      case ADD_POLL :
+        const { poll } = action
+
         return {
           ...state,
-          [action.poll.id]: action.poll,
-          ...replyingTo
-        }*/
+          [poll.id]: {
+              ...poll
+          }
+        }
     default :
       return state
   }
 }
+

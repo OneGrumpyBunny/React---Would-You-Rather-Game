@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,700&display=swap');
 
 body {
@@ -6,6 +8,7 @@ body {
   font-family: 'Lato', sans-serif;
   color: #212121;
   font-weight: 400;
+  background: #D1C4E9;
 }
 
 a {
@@ -14,9 +17,12 @@ a {
 }
 
 .container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 10px;
+    max-width: 800px;
+    margin: 5rem auto;
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    border: 2px solid #512DA8;
 }
 
 .btn {
@@ -54,53 +60,91 @@ ld {
   height: 50px;
   border-radius: 25px;
   margin: 10px;
+  vertical-align: middle;
 }
 
 
 /* Login */
 .userIdentity {
     float:right;
-    width:200px;
+    width:225px;
     margin:1rem;
 }
 .userIdentity img {
     float:left;
-    width:50px;
-    height:50px;
-    border-radius:25%;
+    width:70px;
+    height:70px;
+    border-radius:50%;
     margin: 0 1rem;
 }
 
 /* Nav */
 .nav {
-    clear:both;
+    clear: both;
+    width: 800px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .nav ul {
     list-style-type: none;
-    max-width: 800px;
-    width:800px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
 }
 li.active {
     color: #512DA8;
     font-weight: 700;
 }
 .nav ul li {
-    width: 24%;
+    width: 25%;
+    text-align: center;
+    padding: 10px;
+    float: left;
+    flex: 1 1 33%;
+}
+.nav ul li a {
     text-align: center;
     padding: 10px;
     margin: 1rem 1rem 0 1rem;
-    float: left;
+    font-size: 120%;
 }
 
+.navActive {
+    color: #512DA8;
+    font-weight: 700;
+} 
+
 .nav ul li:hover {
-    background: #D1C4E9;
+    color: #512DA8;
+    font-weight: 700;
     transition: .5s background ease-in;
-    cursor: pointer; 
+    cursor: pointer;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    
 }
+.newPollIcon {
+    border-radius: 50%;
+    background: #512DA8;
+    color: #fff;
+    float:right;
+    padding: 1rem;
+    cursor: pointer;
+}
+/*
+.nav ul li.newFormIcon:hover {
+    background: none;
+    cursor: pointer; 
+}
+.newFormIcon svg {
+    background: #512DA8;
+    border-radius: 50%;
+    fill: #fff;
+    padding: .3rem;
+}
+*/
 
 /* Dashboard */
 .dashboard {
@@ -165,7 +209,6 @@ li.active {
     color: #512DA8;
     background: #BDBDBD; 
 }
-
 .myResponse {
     background-image: URL('check.svg');
     background-position-x: center;
@@ -188,10 +231,92 @@ li.active {
 }
 
 .leaders {
-    display:flex;
+    display: flex;
     justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
 }
 .leaders p {
-    flex: 0 0 25%;
-    align-self: flex-start;
+    flex: 1 0 20%;
+    text-align: center;
+}
+.leaders p:nth-child(1) {
+    flex: 0 0 40%;
+    text-align:left;
+}
+
+/* Login Form */
+.signinForm {
+    text-align: center;
+    padding: 2rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.signinForm h2 {
+    color: #512DA8;
+}
+.signinForm h3 {
+    color: #212121;
+}
+.signinForm select, input {
+    padding: .5rem 1rem;
+}
+.signinForm form {
+    border: 1px solid #D1C4E9;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+}
+.signinForm button, .userIdentity button, .newPollForm button {
+    display: block;
+    margin: 1rem auto;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background: #512DA8;
+    color: #FFF;
+}
+
+.userIdentity button {
+    display: inline-block;
+}
+
+.signinForm button:hover, .userIdentity button:hover {
+    background: #D1C4E9;
+    color: #212121;
+    cursor: pointer;
+}
+
+
+/* New Poll Form */
+.newPollForm {
+    text-align: center;
+}
+.newPollForm h2 {
+    margin-top: 2rem;
+}
+.newPollForm input {
+    padding: .8rem 1rem;
+    font-size: 130%;
+    width: 400px;
+}
+
+/* Poll Details */
+.details {
+    font-size: 110%;
+    color: #fff;
+    background: #512DA8;
+    padding: 1rem;
+    border-radius: 5px;
+}
+.myResponseDetails {
+    background-image: URL('check.svg');
+    background-position-x: left;
+    background-repeat: no-repeat;
+    width: 23px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 1rem;
 }

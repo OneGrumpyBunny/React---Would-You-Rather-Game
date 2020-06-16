@@ -6,7 +6,7 @@ export function formatDate (timestamp) {
   
   export function formatPoll (poll, author, authedUser) {
     const { id, optionOne, optionTwo, timestamp } = poll
-    const { name, avatarURL } = author
+    const { name, avatarURL } = author   
   
     return {
       name,
@@ -21,15 +21,16 @@ export function formatDate (timestamp) {
   }
 
   export function formatLeader (author, rank, authedUser) {
-    const { name, avatarURL, id, answers, questions } = author
+    const { name, avatarURL, answers, questions } = author
     const cntAnswers = Object.keys(answers).length
 
     return {
       name,
       avatar: avatarURL,
-      id,
       rank,
       numAnswered: cntAnswers,
       numAsked: questions.length,
+      authedUser,
+      answers
       }
   }

@@ -1,11 +1,8 @@
-/* Child componenet - To render individual polls */
-import React, { Component, Fragment } from 'react'
-import PropTypes from "prop-types";
+
+import React, { Component} from 'react'
 import { connect } from 'react-redux'
-import { formatPoll } from '../data/helpers'
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { formatLeader } from '../data/helpers'
-import { FaCheck } from 'react-icons/fa/index'
 
 class Author extends Component {
     
@@ -21,7 +18,7 @@ class Author extends Component {
     
     return (
         <div className="leaders">
-            <p>{<img className="avatar" src={avatar}/>} {name}</p>
+            <p>{<img className="avatar" alt="user avater" src={avatar}/>} {name}</p>
             <p>{numAsked}</p>
             <p>{numAnswered}</p>
             <p>#{rank}</p>

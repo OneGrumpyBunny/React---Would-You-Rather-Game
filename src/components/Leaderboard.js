@@ -1,9 +1,7 @@
-/* Dashboard Tab - Leaderboard */
-
 
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import Author from './Author'
 
 class Leaderboard extends Component {
@@ -34,20 +32,6 @@ class Leaderboard extends Component {
     }
 }
 
-
-/*function mapStateToProps ({ users, authedUser }, { id }) {
-    // const author = users[id]
-     console.log("Users: " + users)
-     console.log("id: " + id)
-    return {
-        authedUser,
-        name: users[id].name,
-        avatar: users[id].avatar,
-        numAnswered: users[id].answers.length,
-        numAsked: users[id].questions.length,
-        score: users[id].answers.length + users[id].questions.length
-      }
-  }*/
   function mapStateToProps ({ users }) {
     return {    
       authorIds: Object.keys(users)

@@ -12,7 +12,7 @@ export default function Nav () {
         </li>
         <li>
           <NavLink to='/responses' activeClassName='navActive'>
-            My Responses
+            Answered Polls
           </NavLink>
         </li>
         
@@ -21,13 +21,11 @@ export default function Nav () {
             Leaderboard
           </NavLink>
         </li>
-{/*
         <li>
-          <NavLink to='/newPoll' activeClassName='navActive'>
-            Add a Poll
+          <NavLink to='/add' activeClassName='navActive'>
+            New Poll
           </NavLink>
         </li>
-*/}
       </ul>
     </nav>
   )
