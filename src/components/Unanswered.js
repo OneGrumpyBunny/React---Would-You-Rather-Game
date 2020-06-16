@@ -40,7 +40,7 @@ class Unanswered extends Component {
         <div className="pollContainer">                       
             <div className="poll">
                 <p>{<img className="avatar" alt="user avater" src={avatar}/>} {name}</p>
-                <p>{optionOne.text}<br/>
+                <p>{optionOne.text}<br/><br/>
                 <Link className="pollBtn" value="pollBtn" to={`/questions/${id}`}>Vote Now!</Link>
                 </p>
             </div> 

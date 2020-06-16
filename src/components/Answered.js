@@ -27,7 +27,7 @@ class Answered extends Component {
         <div className="pollContainer">                      
             <div className="poll">
                 <p>{<img className="avatar" alt="user avater" src={avatar}/>} {name}</p>
-                <p>{optionOne.text}<br/>
+                <p>{optionOne.text}<br/><br/>
                    <Link className="pollBtn" to={`/questions/${id}`}>See Details</Link>
                 </p>
             </div> 

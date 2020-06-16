@@ -22,10 +22,10 @@ class Dashboard extends Component {
                 <Nav/>
                 <div className="dashboard">
                       <Route path='/' exact component={PollList} /> 
-                      <Route path='/responses' exact component={PollList}/>
-                      <Route path='/leaderboard'exact  component={Leaderboard} />
-                      <Route path='/add' exact component={NewPoll} />
-                      <Route path='/questions/:id' exact  component={PollDetails}/>
+                      <Route path='/responses' component={PollList}/>
+                      <Route path='/leaderboard' component={Leaderboard} />
+                      <Route path='/add' component={NewPoll} />
+                      <Route path='/questions/:id' component={PollDetails}/>
                 </div>
             </div>
         }
