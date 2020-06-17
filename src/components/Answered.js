@@ -2,20 +2,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formatPoll } from '../data/helpers'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 class Answered extends Component {
     
-  /*toDetails = (e, id) => {
-    const { history } = this.props
-    
-    e.preventDefault()
-    history.push(`/questions/${id}`)
-    return <Redirect to={`/questions/${id}`}/>
-  }*/
   render() {
-      
     const { poll } = this.props
+    
+    if (!poll) {
+      return <Redirect to='/error404' />
+    }
+      
     const { id, avatar, name, optionOne } = poll
 
     if (poll === null) {

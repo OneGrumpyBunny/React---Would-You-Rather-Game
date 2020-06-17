@@ -7,7 +7,12 @@ export function formatDate (timestamp) {
   export function formatPoll (poll, author, authedUser) {
     const { id, optionOne, optionTwo, timestamp } = poll
     const { name, avatarURL } = author   
+
+    const optionOneTotalVotes = poll.optionOne.votes.length
+    const optionTwototalVotes = poll.optionTwo.votes.length
+    const totalVotes = optionOneTotalVotes + optionTwototalVotes
   
+
     return {
       name,
       id,
@@ -17,6 +22,8 @@ export function formatDate (timestamp) {
       hasVoted1: optionOne.votes.includes(authedUser),
       hasVoted2: optionTwo.votes.includes(authedUser),
       avatar: avatarURL,
+      percentVotes1: (optionOneTotalVotes/totalVotes*100).toFixed(0),
+      percentVotes2: (optionTwototalVotes/totalVotes*100).toFixed(0)
       }
   }
 

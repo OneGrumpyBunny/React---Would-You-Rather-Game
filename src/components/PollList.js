@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Poll from './Poll'
 
@@ -11,7 +10,7 @@ class OpenPolls extends Component {
     const { pollIds } = this.props
 
     return (
-      <Router>
+      
         <div className="pollsList">          
             <h3><em>Would you rather...</em></h3>
             {pollIds.map((id) => (              
@@ -20,7 +19,7 @@ class OpenPolls extends Component {
               </div>
             ))}
         </div>
-      </Router>
+      
     )
   }
 }

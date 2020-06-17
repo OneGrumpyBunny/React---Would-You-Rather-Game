@@ -166,13 +166,14 @@ li.active {
 }
 .pollContainer {
     border: 1px solid #512DA8;
-    width: 70%;
+    width: 90%;
     margin: 1rem auto;
 }
 .poll p {
     font-size: 130%;
     flex: 0 0 50%;
 }
+
 .poll p:nth-child(1) {
     text-align:left;
 }
@@ -180,7 +181,12 @@ li.active {
     text-align:center;
 }
 
-.poll {
+.pollDetail p {
+    text-align: center;
+    font-size: 130%;
+    flex: 0 0 50%;
+}
+.poll, .pollDetail {
     display: flex;
     /* width: 80%; */
     margin: 0 auto;
@@ -191,20 +197,23 @@ li.active {
 .pollYN p{
     width:75px;
 }
-
+*/
+.zeroMargin {
+    margin:0;
+}
 .pollYN {
-    display:flex;
+    display: flex;
     justify-content: space-around;
     margin: 1rem 0;
 }
-
+/*
 .pollsList hr {
     color: #D1C4E9;
     border: 1px solid #D1C4E9;
     height: 0;
 }
 */
-.pollBtn {
+.pollBtn, .voteBtn {
     font-size: 90%;
     color: #212121;
     padding: 5px;
@@ -213,7 +222,9 @@ li.active {
     cursor: pointer;
     margin: 2rem 0 0 0;
 }
-
+.voteBtn {
+    margin:0;
+}
 .pollBtn:hover {
     color: #512DA8;
     background: #BDBDBD; 

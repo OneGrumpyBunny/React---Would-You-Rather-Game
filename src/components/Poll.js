@@ -2,14 +2,19 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { formatPoll } from '../data/helpers'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import Answered from './Answered'
 import Unanswered from './Unanswered'
 
 class Poll extends Component {
 
   render() {
-    const { location, poll } = this.props      
+    const { location, poll } = this.props 
+    
+    if (!poll) {
+      return <Redirect to='/error404' />
+    }
+
     const { hasVoted1, hasVoted2, id } = poll
     
     if (poll === null) {
