@@ -14,7 +14,7 @@ class PollDetails extends Component {
             <div className="pollContainer">
                 <div className="poll">
                 <p>{<img className="avatar" alt="user avater" src={avatar}/>} {name}</p>
-                    <p>{hasVoted1 === true && <FaCheck color="Green"/>} {optionOne.text}<br/>
+                    <p>{hasVoted1 === true && <FaCheck color="Green"/>} {optionOne.text}<br/><br/>
                     {hasVoted2 === true && <FaCheck color="Green"/>} {optionTwo.text}</p>
                 </div>                                  
             </div>

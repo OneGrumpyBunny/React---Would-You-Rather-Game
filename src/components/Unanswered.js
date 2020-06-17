@@ -1,5 +1,5 @@
 
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formatPoll } from '../data/helpers'
 import { Link, withRouter, Redirect } from 'react-router-dom'
@@ -7,14 +7,13 @@ import { handleSaveAnswer } from '../actions/polls'
 
 class Unanswered extends Component {
     
+  /*
   toDetails = (e, id) => {
     const { history } = this.props
-    console.log("You are in Unanswered toDetails function")
     e.preventDefault()
 
     history.push(`/questions/${id}`)
-    return <Redirect to={`/questions/${id}`}/>
-  }
+  }*/
 
   handleAnswer = (e) => {
     e.preventDefault()    
@@ -41,8 +40,8 @@ class Unanswered extends Component {
         <div className="pollContainer">                       
             <div className="poll">
                 <p>{<img className="avatar" alt="user avater" src={avatar}/>} {name}</p>
-                <p>{optionOne.text}<br/>
-                <button className="pollBtn" value="pollBtn" onClick={(e) => this.toDetails(e, id)}>Vote Now!</button>
+                <p>{optionOne.text}<br/><br/>
+                <Link className="pollBtn" value="pollBtn" to={`/questions/${id}`}>Vote Now!</Link>
                 </p>
             </div> 
         </div>
