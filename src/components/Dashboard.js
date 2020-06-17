@@ -19,14 +19,12 @@ class Dashboard extends Component {
             : <div>
                 <IdentifyUser/>          
                 <Nav/>
-                <div className="dashboard">
-                    <div>
+                <div className="dashboard">                    
                     <Route path='/' exact component={PollList} /> 
                     <Route path='/responses' component={PollList}/>
                     <Route path='/leaderboard' component={Leaderboard} />
                     <Route path='/add' component={NewPoll} />
-                    <Route path='/questions/:id'  component={PollDetails}/>
-                    </div>
+                    <Route path='/questions/:id'  component={PollDetails}/>                    
                 </div>
             </div>
         }

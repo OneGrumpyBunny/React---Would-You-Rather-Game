@@ -8,7 +8,7 @@ class Answered extends Component {
     
   toDetails = (e, id) => {
     const { history } = this.props
-    console.log("You are in Answered toDetails function")
+    
     e.preventDefault()
     history.push(`/questions/${id}`)
     return <Redirect to={`/questions/${id}`}/>
