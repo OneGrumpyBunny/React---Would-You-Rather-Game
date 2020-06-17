@@ -4,7 +4,7 @@ import { setAuthedUser } from "../actions/authedUser";
 
 class LoginForm extends Component {
 	state = {
-        userId: "currentUser",
+        userId: "",
         buttonDisabled: true
 	};
 
@@ -32,9 +32,9 @@ class LoginForm extends Component {
             <div className="signinForm">            
             <h2><em>Welcome to the Would You Rather App!</em></h2>
             <h3>Please sign in to continue</h3>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit}> 
                     <select onChange={this.handleChange}>
-                        <option value="selectuser" disabled="">Select user</option>
+                        <option value="" disabled="">Select user</option>
                         {Object.values(users).map((user) => (
                             <option 
                                 key={user.id} 
@@ -45,7 +45,8 @@ class LoginForm extends Component {
                         ))}
                     </select>
                     <button                        
-                        disabled={buttonDisabled}>
+                        disabled={buttonDisabled}
+                       >
                         Sign In
                     </button>
                 </form>

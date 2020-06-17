@@ -8,7 +8,6 @@ import NewPoll from './NewPoll'
 import IdentifyUser from './IdentifyUser'
 import Nav from './Nav'
 import PollDetails from './PollDetails'
-import PollVote from './PollVote'
 import Error404 from "./Error404"
 
 class Dashboard extends Component { 
@@ -29,7 +28,6 @@ class Dashboard extends Component {
                       <Route path='/leaderboard' component={Leaderboard} />
                       <Route path='/add' component={NewPoll} />
                       <Route path='/questions/:id' component={PollDetails}/>
-                      <Route path='/vote/:id' component={PollVote}/>
                       <Route path="/error404" component={Error404} />
                       <Route component={Error404} />
                   </Switch>    
