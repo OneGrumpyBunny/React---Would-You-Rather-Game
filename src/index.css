@@ -21,6 +21,7 @@ a {
     background: #fff;
     border-radius: 5px;
     border: 2px solid #512DA8;
+    width: 90%;
 }
 
 .btn {
@@ -65,8 +66,15 @@ ld {
 /* Login */
 .userIdentity {
     float:right;
-    width:225px;
+    width:30%;
     margin:1rem;
+}
+
+@media all and (max-width:415px) {
+    
+    .userIdentity {
+        width:53%;
+    }
 }
 .userIdentity img {
     float:left;
@@ -79,7 +87,7 @@ ld {
 /* Nav */
 .nav {
     clear: both;
-    width: 800px;
+    width: 100%;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -96,17 +104,20 @@ li.active {
     font-weight: 700;
 }
 .nav ul li {
-    width: 25%;
     text-align: center;
-    padding: 10px;
+    padding-bottom: 10px;
     float: left;
-    flex: 1 1 33%;
+    flex: 1;
 }
 .nav ul li a {
     text-align: center;
-    padding: 10px;
-    margin: 1rem 1rem 0 1rem;
     font-size: 110%;
+}
+
+@media all and (max-width:415px) {
+    .nav ul li a {
+        font-size: 100%;
+    }
 }
 
 .navActive {
@@ -147,7 +158,7 @@ li.active {
 /* Dashboard */
 .dashboard {
     max-width: 800px;
-    width:800px;
+    width:100%;
     border: 2px solid #D1C4E9;
     border-radius: 5px;
     min-height:300px;
@@ -159,7 +170,6 @@ li.active {
 .pollsList {
     padding: 2rem;
 }
-
 .pollsList h3 {
     color:#512DA8;
     font-weight:700;
@@ -192,12 +202,10 @@ li.active {
     margin: 0 auto;
     padding: 1rem;
 }
-
-/*
-.pollYN p{
-    width:75px;
+.poll {    
+    align-items: center;
 }
-*/
+
 .zeroMargin {
     margin:0;
 }
@@ -206,13 +214,6 @@ li.active {
     justify-content: space-around;
     margin: 1rem 0;
 }
-/*
-.pollsList hr {
-    color: #D1C4E9;
-    border: 1px solid #D1C4E9;
-    height: 0;
-}
-*/
 .pollBtn, .voteBtn {
     font-size: 90%;
     color: #212121;
@@ -229,17 +230,30 @@ li.active {
     color: #512DA8;
     background: #BDBDBD; 
 }
-/*
-.myResponse {
-    background-image: URL('check.svg');
-    background-position-x: center;
-    background-repeat: no-repeat;
-}*/
+
+@media all and (max-width:415px) {
+    .pollsList {
+        padding: .5rem;
+    }
+    
+    .poll p, .pollDetail p {
+        font-size: 100%;
+    }
+    .poll, .pollDetail {
+        padding: .5rem;
+    }
+}
 
 /* Leaderboard */
 
 .leadersList {
     padding: 2rem;
+}
+
+@media all and (max-width:415px) {
+    .leadersList {
+        padding: .5rem;
+    }
 }
 
 .leadersList h3 {
@@ -266,6 +280,22 @@ li.active {
     text-align:left;
 }
 
+
+@media all and (max-width:415px) {
+    
+    .leaders p {
+        flex: 1 0 15%;
+        font-size:87%;
+    }
+    .leaders p:nth-child(1) {
+        flex: 0 0 45%;
+    }
+    .avatar {
+        height:30px;
+    }
+}
+
+
 /* Login Form */
 .signinForm {
     text-align: center;
@@ -282,6 +312,7 @@ li.active {
 }
 .signinForm select, input {
     padding: .5rem 1rem;
+    font-size: 110%;
 }
 .signinForm form {
     border: 1px solid #D1C4E9;
@@ -289,7 +320,9 @@ li.active {
     margin: 0 auto;
     padding: 1rem 2rem;
     border-radius: 5px;
+    width: 60%;
 }
+
 .signinForm button, .userIdentity button, .newPollForm button {
     display: block;
     margin: 1rem auto;
@@ -298,6 +331,20 @@ li.active {
     border: none;
     background: #512DA8;
     color: #FFF;
+    font-size: 110%;
+}
+
+@media all and (max-width:415px) {
+    .signinForm button, .newPollForm button {
+        width: 83%;
+    }
+    .signinForm form {
+        padding: 1rem;
+        width: 83%;
+    }
+    .signinForm {
+        width: auto;
+    }
 }
 
 .userIdentity button {
@@ -324,6 +371,12 @@ li.active {
     width: 400px;
 }
 
+@media all and (max-width:415px) {
+    .newPollForm input {
+        width: 83%;
+    }
+}
+
 /* Poll Details */
 .details {
     font-size: 110%;
@@ -331,6 +384,13 @@ li.active {
     background: #512DA8;
     padding: 1rem;
     border-radius: 5px;
+}
+
+@media all and (max-width:415px) {
+    .details {
+        padding: .5rem;
+        font-size: 93%;
+    }
 }
 .myResponseDetails {
     /*background-image: URL('check.svg');

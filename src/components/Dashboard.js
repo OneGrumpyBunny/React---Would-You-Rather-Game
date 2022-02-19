@@ -31,7 +31,7 @@ class Dashboard extends Component {
                       <Route path='/questions/:id' component={PollDetails}/>
                       <Route path='/vote/:id' component={PollVote}/>
                       <Route path="/error404" component={Error404} />
-                      <Route component={Error404} />
+                      <Route component={PollList} />
                   </Switch>    
                 </div>
             </div>

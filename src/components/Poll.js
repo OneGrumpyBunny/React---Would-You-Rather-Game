@@ -12,7 +12,7 @@ class Poll extends Component {
     const { location, poll } = this.props 
     
     if (!poll) {
-      return <Redirect to='/error404' />
+      return <Redirect to='/Error404' />
     }
 
     const { hasVoted1, hasVoted2, id } = poll
