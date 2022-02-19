@@ -10,6 +10,7 @@ class NewPoll extends Component {
         buttonDisabled: true,
         optionOne: '',
         optionTwo: '',
+        warning: '',
         toHome: false
     };  
 
@@ -20,7 +21,8 @@ class NewPoll extends Component {
         this.setState(() => ({
             optionOne: name === "optionOne" ? (value) : optionOne,
             optionTwo: name === "optionTwo" ? (value) : optionTwo,
-            buttonDisabled: !optionOne || !optionTwo ? true : false
+            buttonDisabled: (!optionOne || !optionTwo),
+            warning: '' 
         }))
     }
 
@@ -30,18 +32,24 @@ class NewPoll extends Component {
         const { dispatch, id } = this.props
         const { optionOne, optionTwo } = this.state
 
-        dispatch(handleSavePoll(optionOne, optionTwo))
-        
-        this.setState(() => ({
-            optionOne: '',
-            optionTwo: '',
-            buttonDisabled: true,
-            toHome: id ? false : true,
-        }))
+        if (optionOne === optionTwo) {
+            this.setState(() => ({
+                warning: 'The options should not be the exactly the same'
+            }))
+        } else {
+            dispatch(handleSavePoll(optionOne, optionTwo))            
+            this.setState(() => ({
+                optionOne: '',
+                optionTwo: '',
+                buttonDisabled: true,
+                toHome: id ? false : true,
+                warning: ''
+            }))
+        }
     };
     
     render() {
-        const { buttonDisabled, toHome } = this.state
+        const { buttonDisabled, toHome, warning } = this.state
 
         if (toHome) {
             return <Redirect to='/' />
@@ -58,6 +66,7 @@ class NewPoll extends Component {
                         disabled={buttonDisabled}>
                         Save
                     </button>
+                    <span>{warning}</span>
                 </form> 
             </div>
         )
